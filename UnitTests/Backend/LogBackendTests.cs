@@ -31,6 +31,9 @@ namespace UnitTests.Backend
             Assert.AreEqual(oldItem, myTest.Read(newItem.ID));
         }
 
+
+
+        [TestMethod]
         public void LogBackend_Read_Valid_Item_Should_Pass()
         {
             //Arrage
@@ -47,6 +50,25 @@ namespace UnitTests.Backend
             Assert.AreEqual(oldItem.RecordedDateTime, newItem.RecordedDateTime);
             Assert.AreEqual(oldItem.Value, newItem.Value);
         }
+
+        [TestMethod]
+        public void LogBackend_Update_First_Item_Should_Pass()
+        {
+            //Arrage
+            var myTest = LogBackend.Instance;
+            var oldItem = myTest.Index().LogList.First();
+            var oldValue = oldItem.Value;
+
+            oldItem.Value = "UpdatedValue";
+
+            //Act
+            var result = myTest.Update(oldItem);
+            var newItem = myTest.Read(oldItem.ID);
+            //Assert
+
+            Assert.AreNotEqual(oldValue, newItem.Value);
+        }
+
 
         [TestMethod]
         public void LogBackend_Create_InValid_Null_Should_Pass()
