@@ -1,5 +1,6 @@
 ﻿using HW1c.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Collections.Generic;
 
 namespace UnitTests.Models
 {
@@ -64,6 +65,22 @@ namespace UnitTests.Models
             //Assert
 
             Assert.IsNotNull(result);
+        }
+
+
+        [TestMethod]
+        public void RepoertViewModel_Set_NumberOfUsers_Default_Should_Pass()
+        {
+
+            //Arrage
+            var myTest = new ReportViewModel();
+            var myNumberOfUsers = 5;
+            //Act
+            myTest.NumberOfUsers = myNumberOfUsers;
+            var result = myTest.NumberOfUsers;
+            //Assert
+
+            Assert.AreEqual(5,result);
         }
     }
 }
