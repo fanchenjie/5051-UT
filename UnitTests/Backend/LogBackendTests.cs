@@ -70,6 +70,23 @@ namespace UnitTests.Backend
         }
 
 
+
+        [TestMethod]
+        public void LogBackend_Delete_First_Item_Should_Pass()
+        {
+            //Arrage
+            var myTest = LogBackend.Instance;
+            var oldItem = myTest.Index().LogList.First();
+           
+
+            //Act
+            var result = myTest.Delete(oldItem.ID);
+            var newItem = myTest.Index().LogList.First();
+            //Assert
+
+            Assert.AreNotEqual(oldItem.ID, newItem.ID);
+        }
+
         [TestMethod]
         public void LogBackend_Create_InValid_Null_Should_Pass()
         {
