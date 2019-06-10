@@ -30,5 +30,19 @@ namespace UnitTests.Backend
 
             Assert.AreEqual(oldItem, myTest.Read(newItem.ID));
         }
+
+        [TestMethod]
+        public void LogBackend_Create_InValid_Null_Should_Pass()
+        {
+            //Arrage
+            var myTest = LogBackend.Instance;
+
+            //Act
+
+            var newItem = myTest.Create(null);
+            //Assert
+
+            Assert.AreEqual(null, newItem);
+        }
     }
 }
