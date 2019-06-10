@@ -7,8 +7,14 @@ namespace UnitTests.Models
     public class ReportViewModelTests
     {
         [TestMethod]
-        public void TestMethod1()
+        public void RepoertViewModel_Instantiate_Default_Should_Pass()
         {
+
+            //Arrage
+
+            //Act
+
+            //Assert
         }
     }
 }
