@@ -7,9 +7,13 @@ namespace UnitTests.Backend
     public class LogBackendTests
     {
         [TestMethod]
-        public void TestMethod1()
+        public void LogBackend_Create_Default_Should_Pass()
         {
+            //Arrage
 
+            //Act
+
+            //Assert
         }
     }
 }
